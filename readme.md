@@ -1,7 +1,7 @@
-# THE DUPE
-
-[logo]: https://github.com/BV5Tl0N/TheDupe/blob/main/thedupe.png
+﻿# THE DUPE
 ![logo]
+
+[logo]: (https://github.com/BV5Tl0N/TheDupe/blob/main/thedupe.png)
 
 The Dupe is a *free, multi-platform* sensor for your decoy systems or honeypots. This sensor is *easy to deploy and easy to use*, **you will have your own running decoy system in under 10 minutes!**
 
@@ -70,5 +70,5 @@ Hack The Box https://www.hackthebox.eu/home/users/profile/543260
 #### PacketDotNet / Chris Morgan
 https://www.nuget.org/packages/PacketDotNet/1.2.0/
 #### SharpPcap / Tamir Gal, Chris Morgan and others
-https://github.com/chmorgan/sharppcap \
+https://github.com/chmorgan/sharppcap
 https://www.nuget.org/packages/SharpPcap/5.4.0
