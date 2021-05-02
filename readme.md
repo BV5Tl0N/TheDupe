@@ -1,5 +1,5 @@
 ﻿# THE DUPE
-!(https://github.com/BV5Tl0N/TheDupe/blob/main/thedupe.png)
+![logo]:(https://github.com/BV5Tl0N/TheDupe/blob/main/thedupe.png)
 
 The Dupe is a *free, multi-platform* sensor for your decoy systems or honeypots. This sensor is *easy to deploy and easy to use*, **you will have your own running decoy system in under 10 minutes!**
 
