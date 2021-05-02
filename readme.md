@@ -1,4 +1,4 @@
-﻿# THE DUPE
+# THE DUPE
 
 [logo]: https://github.com/BV5Tl0N/TheDupe/blob/main/thedupe.png
 ![logo]
