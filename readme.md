@@ -69,5 +69,5 @@ Hack The Box https://www.hackthebox.eu/home/users/profile/543260
 #### PacketDotNet / Chris Morgan
 https://www.nuget.org/packages/PacketDotNet/1.2.0/
 #### SharpPcap / Tamir Gal, Chris Morgan and others
-https://github.com/chmorgan/sharppcap
+https://github.com/chmorgan/sharppcap \
 https://www.nuget.org/packages/SharpPcap/5.4.0
