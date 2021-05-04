@@ -4,56 +4,67 @@
 
 The Dupe is a *free, multi-platform* sensor for your decoy systems or honeypots. This sensor is *easy to deploy and easy to use*, **you will have your own running decoy system in under 10 minutes!**
 
-### WHAT IS A HONEYPOT?
+### What is a Honeypot?
 A honeypot is a computer system that acts as a decoy for threat actors. It mimics a legitimate system that hackers could attack. Their intrusion attempts are logged for analysis thereafter. 
 
-### COMPATIBILITY
-This sensor is tested to work on the following operating systems. If your system is not listed below, the sensor may or may not work as intended.
-* Microsoft Windows 10, 64 bit 
-* Microsoft Windows Server 2016, 64 bit
-* Ubuntu 20.04, 64 bit
+### Minimum Requirements
+This sensor is tested to work using the default configuration on  specifications and operating systems listed below. You may need to use higher specifications if you need to monitor more ports and if your honeypot is expected to receive high volumes of traffic (like if it's placed on DMZ). If your system is not listed below, you may try, but the sensor may or may not work as intended. 
+* 1 Ghz CPU
+* 128 MB RAM
+* 50 GB Disk Space
+* .NET Core Runtime 5.0
+* Microsoft 64 Bit OS: Windows 10, Server 2016
+* Linux 64 Bit OS: Ubuntu 20.04
 
-### CONFIGURATION FILES
+### Supported Protocols
+This release currently supports the list of protocols below. The list will be expanded if needed in the future.
+* TCP
+* UDP
+* ICMP
 
-#### EXEMPTIONS.CONF 
-This configuration file can be used to list trusted connections to your honeypot. For example, if you wouldn't like your honeypot to detect a RDP from your workstation with IP 10.10.10.10, you must add below line to this configuration file.
-> \<IP Address>:\<Protocol>:\<Port>:\<Name>\
-> ***10.10.10.10:TCP:3389:RDP***
+### Configuration Files
 
-#### INTERFACE.CONF
-**Entry to this configuration file is required** for this sensor to work. You need to determine your *network interface device ID and ip address*, where the sensor would listen for incoming connections.
+#### Log Configuration
+* **log_dir** identifies the location where event and error logs is stored.
+* **date_format** identifies the date format that the program will use. This affects all date formatting.
+* **time_format** identifies the time format that the program will use. This affects all time formatting.
 
-How to get your interface's device ID
-* In Windows, you can run the **getmac** command.
-> getmac
+#### Network Monitor Configuration
+* **interface_id** identifies the target network interface for traffic monitoring.
 
-Your device ID will be shown under Transport Name, ***inside the curly braces***.
+    How to get your Interface Device ID
+    - Open the command prompt
+    - Run "getmac" command without quotes
+    - Refer to the output. Your device ID will be shown under Transport Name, ***inside the curly braces***.
 
-|Physical Address  |Transport Name                                     |
-|------------------|---------------------------------------------------|
-|FF-A1-A2-A3-A4-A5 |\Device\Tcpip_{***ABCDEF12-3456-7890-ABCD-EF123456789***}|
+    | Physical Address  | Transport Name                                            |
+    |-------------------|-----------------------------------------------------------|
+    | FF-A1-A2-A3-A4-A5 | \Device\Tcpip_{***ABCDEF12-3456-7890-ABCD-EF123456789***} |
 
-* Linux
-> ip addr
+* **ip_address** identifies the exact IP address to listen to, from the chosen network interface.
 
-Your device ID will be the ***name of the network interface itself*** where your target IP is assigned.
+    How to get your IP Address
+    - Open the command prompt
+    - Run "ipconfig" command without quotes
+    - Refer to the output. Your IP address will be shown under "IPv4 Address" of your target interface
 
-|$ ip addr|
-|-------------------------------|
-|1: lo: <LOOPBACK,UP,LOWER_UP> ...|
-|2: ***enp0s3***: <BROADCAST,MULTICAST,UP,LOWER_UP> ...|
+    IPv4 Address. . . . . . . . . . . : 192.168.69.69
 
+#### Home Call Configuration
+* **check_update** indicates whether the program would check for updated packages online.
+* **update_interval** identifies the amount of time in minutes, on when the program will check for updates. 
+* **send_intel** indicates whether the program will anonymously send public IPs detected by The Dupe for threat intelligence.
+* **send_interval** identifies the amount of time in minutes, on when the program send intel to the honeynet.
 
-#### PORTSLIB.CONF
-Not used for now, other than as reference.
+#### Service Monitoring Configuration
+* **monitor** accepts one service to monitor per line. For multiple services, add monitor keyword every entry then its value.
+Monitor keyword accepts the format [protocol]<space>[Port Number]<space>[Port Name] as value,
+_eg.: monitor=TCP 20 FTP._
 
-#### PORTSMON.CONF
-**Entry to this configuration file is required** for this sensor to work. This should contain the list of protocols and services that will be monitored. A default list is provided upon installation.
+#### Whitelist Configuration
+* **"whitelist** accepts one service and IP pair to monitor per line. For multiple pairs, add whitelist keyword every entry then its value. Whitelist keyword accepts the format [Source IP]<space>[protocol]<space>[Port Number]<space>[Port Name] as value, _eg.: "whitelist=10.0.0.1 UDP 123"_
 
-> \<Protocol>:\<Port Number>:\<Service Name>\
-> ***UDP:23:TELNET***
-
-## DEVELOPMENT TEAM
+## Development Team
 #### Follow us on Github and Hack The Box!
 
 #### BV5Tl0N
@@ -64,10 +75,14 @@ Hack The Box https://www.hackthebox.eu/home/users/profile/538292
 Github	https://github.com/wunderweiss-el \
 Hack The Box https://www.hackthebox.eu/home/users/profile/543260
 
-## THANKS TO
+## Thanks To
 
 #### PacketDotNet / Chris Morgan
 https://www.nuget.org/packages/PacketDotNet/1.2.0/
 #### SharpPcap / Tamir Gal, Chris Morgan and others
 https://github.com/chmorgan/sharppcap
 https://www.nuget.org/packages/SharpPcap/5.4.0
+
+## License
+
+This software is license under [GNU GENERAL PUBLIC LICENSE](https://raw.githubusercontent.com/BV5Tl0N/TheDupe/main/LICENSE).
