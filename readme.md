@@ -18,6 +18,7 @@ This sensor is tested to work using the default configuration on  specifications
 
 ### Supported Protocols
 This release currently supports the list of protocols below. The list will be expanded if needed in the future.
+* IPV4
 * TCP
 * UDP
 * ICMP
