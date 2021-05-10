@@ -3,7 +3,7 @@
 > https://github.com/BV5Tl0N/TheDupe/blob/main/readme.md
 2. Download the program files.
 > https://github.com/BV5Tl0N/TheDupe/new/main/Windows-x64
-3. Copy to a directory where your account has write access.
+3. Extract to a directory where your account has write access.
 4. Run the executable as administrator, once. This will create configuration and other necessary files.
 5. Update the configuration file.
 6. Re-run the executable as administrator.
