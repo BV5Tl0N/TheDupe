@@ -27,13 +27,15 @@ This release currently supports the list of protocols below. The list will be ex
 
 #### Log Configuration
 * **log_dir** identifies the location where event and error logs is stored.
-* **date_format** identifies the date format that the program will use. This affects all date formatting.
-* **time_format** identifies the time format that the program will use. This affects all time formatting.
+* **date_format** identifies the date format that the program will use. This must contain day, month & year and affects all date formatting.
+* **time_format** identifies the time format that the program will use. This must contain hour, minute & second and affects all time formatting.
 
 #### Network Monitor Configuration
 * **interface_id** identifies the target network interface for traffic monitoring.
 
-    How to get your Interface Device ID
+    ### How to get your Interface Device ID 
+
+    #### Windows
     - Open the command prompt
     - Run "getmac" command without quotes
     - Refer to the output. Your device ID will be shown under Transport Name, ***inside the curly braces***.
@@ -42,16 +44,35 @@ This release currently supports the list of protocols below. The list will be ex
     |-------------------|-----------------------------------------------------------|
     | FF-A1-A2-A3-A4-A5 | \Device\Tcpip_{***ABCDEF12-3456-7890-ABCD-EF123456789***} |
 
+    #### Linux
+    - Run "ip addr" command without quotes.
+    - On the sample result below, your interface id is 'enp0s3'. 
+
+    **enp0s3**: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:19:ac:a0 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.254.119/24 brd 192.168.254.255 scope global dynamic enp0s3
+
 * **ip_address** identifies the exact IP address to listen to, from the chosen network interface.
 
-    How to get your IP Address
+    ### How to get your IP Address
+
+    #### Windows
     - Open the command prompt
     - Run "ipconfig" command without quotes
     - Refer to the output. Your IP address will be shown under "IPv4 Address" of your target interface
 
-    IPv4 Address. . . . . . . . . . . : 192.168.69.69
+    IPv4 Address. . . . . . . . . . . : **192.168.69.69**
+
+    #### Linux
+    - Run "ip addr" command without quotes.
+    - On the sample result below, your IP address is '192.168.254.119'.
+
+    > enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:19:ac:a0 brd ff:ff:ff:ff:ff:ff
+    inet **192.168.254.119**/24 brd 192.168.254.255 scope global dynamic enp0s3
 
 #### Home Call Configuration
+These configs are inactive and will be used future releases.
 * **check_update** indicates whether the program would check for updated packages online.
 * **update_interval** identifies the amount of time in minutes, on when the program will check for updates. 
 * **send_intel** indicates whether the program will anonymously send public IPs detected by The Dupe for threat intelligence.
