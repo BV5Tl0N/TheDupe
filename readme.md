@@ -48,8 +48,8 @@ This release currently supports the list of protocols below. The list will be ex
     - Run "ip addr" command without quotes.
     - On the sample result below, your interface id is 'enp0s3'. 
 
-    **enp0s3**: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
-    link/ether 08:00:27:19:ac:a0 brd ff:ff:ff:ff:ff:ff
+    **enp0s3**: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000\
+    link/ether 08:00:27:19:ac:a0 brd ff:ff:ff:ff:ff:ff\
     inet 192.168.254.119/24 brd 192.168.254.255 scope global dynamic enp0s3
 
 * **ip_address** identifies the exact IP address to listen to, from the chosen network interface.
@@ -67,8 +67,8 @@ This release currently supports the list of protocols below. The list will be ex
     - Run "ip addr" command without quotes.
     - On the sample result below, your IP address is '192.168.254.119'.
 
-    > enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
-    link/ether 08:00:27:19:ac:a0 brd ff:ff:ff:ff:ff:ff
+    enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000\
+    link/ether 08:00:27:19:ac:a0 brd ff:ff:ff:ff:ff:ff\
     inet **192.168.254.119**/24 brd 192.168.254.255 scope global dynamic enp0s3
 
 #### Home Call Configuration
