@@ -14,3 +14,4 @@ A honeypot is a computer system that acts as a decoy for threat actors. It mimic
 * [License](https://github.com/BV5Tl0N/TheDupe/wiki/License)
 * [Development Team](https://github.com/BV5Tl0N/TheDupe/wiki/Development-Team)
 * [Credits](https://github.com/BV5Tl0N/TheDupe/wiki/Credits)
+* [Change Logs](https://github.com/BV5Tl0N/TheDupe/wiki/Change-Logs)
