@@ -8,7 +8,7 @@ The Dupe is a *free, multi-platform* sensor for your decoy systems or honeypots.
 A honeypot is a computer system that acts as a decoy for threat actors. It mimics a legitimate system that hackers could attack. Their intrusion attempts are logged for analysis thereafter. 
 
 ### Table of Contents
-* [Minimum System Requirements](https://github.com/BV5Tl0N/TheDupe/wiki/Minimum-System-Requirements)
+* [System Requirements](https://github.com/BV5Tl0N/TheDupe/wiki/System-Requirements)
 * [Supported Protocols](https://github.com/BV5Tl0N/TheDupe/wiki/Supported-Protocols)
 * [Configuration](https://github.com/BV5Tl0N/TheDupe/wiki/Configuration)
 * [License](https://github.com/BV5Tl0N/TheDupe/wiki/License)
