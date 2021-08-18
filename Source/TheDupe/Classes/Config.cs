@@ -87,8 +87,17 @@ namespace TheDupe.Classes
                         switch (_configWithValue[0])
                         {
                             case "log_dir":
-                                _logDir = _configWithValue[1].Trim();
-                                Log.CheckDir();
+                                if (Directory.Exists(_configWithValue[1].Trim()))
+                                {
+                                    _logDir = _configWithValue[1].Trim();
+                                    Log.CheckDir();
+                                }
+                                else
+                                {
+                                    _logDir = (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) ? "/var/log/thedupe/" : _logDir = @"C:\ProgramData\TheDupe\Logs\";
+                                    Log.CheckDir();
+                                    Log.WriteError("Value of 'log_dir' is not an existing directory. Default location was used to record this error.");
+                                }
                                 break;
                             case "date_format":
                                 if ((DateTime.TryParse(dt.ToString(_configWithValue[1].Trim()), out DateTime _dt))

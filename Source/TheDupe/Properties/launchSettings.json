@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "WSL 2": {
+      "commandName": "WSL2"
+    },
+    "TheDupe": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\cbp\\Dropbox\\Programming\\DotNet\\Honeynet\\Honeynet_SC\\BgSvc\\TheDupe\\bin\\Debug\\net5.0\\TheDupe.exe"
+    }
+  }
+}
